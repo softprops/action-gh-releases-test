@@ -17,6 +17,6 @@ jobs:
           body_path: ${{ github.workflow }}-CHANGELOG.txt
           files: |
             a.txt
-            b.text
+            b.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
