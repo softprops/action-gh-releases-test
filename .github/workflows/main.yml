@@ -20,4 +20,5 @@ jobs:
             a.txt
             b.txt
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_REPO_TOKEN }}
+          GITHUB_REPOSITORY: softprops/action-gh-release-cross-test
