@@ -19,7 +19,7 @@ jobs:
       - name: Generate Changelog
         run: echo "# Good things have arrived" > ${{ github.workflow }}-CHANGELOG.txt
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@debug
         if: startsWith(github.ref, 'refs/tags/')
         with:
           #discussion_category_name: "Announcements"
