@@ -4,7 +4,15 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # simulate a job that uploads multiple artifacts for multiple os's
+    strategy:
+      matrix:
+        include:
+          - asset: a.txt
+            os: ubuntu-latest
+          - asset: b.txt
+            os: os: ubuntu-latest
+    runs-on:  ${{ matrix.os }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -17,8 +25,7 @@ jobs:
           #discussion_category_name: "Announcements"
           body_path: ${{ github.workflow }}-CHANGELOG.txt
           files: |
-            a.txt
-            b.txt
+            ${{ matrix.asset }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_REPO_TOKEN }}
           #GITHUB_REPOSITORY: softprops/action-gh-release-cross-test
