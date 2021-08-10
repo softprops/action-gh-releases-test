@@ -11,8 +11,8 @@ jobs:
           - asset: a.txt
             os: ubuntu-latest
           - asset: b.txt
-            os: os: ubuntu-latest
-    runs-on:  ${{ matrix.os }}
+            os: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
