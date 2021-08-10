@@ -27,5 +27,5 @@ jobs:
           files: |
             ${{ matrix.asset }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           #GITHUB_REPOSITORY: softprops/action-gh-release-cross-test
