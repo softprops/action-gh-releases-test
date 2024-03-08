@@ -4,6 +4,8 @@ on: push
 
 jobs:
   build:
+    permissions:
+      contents: write
     # simulate a job that uploads multiple artifacts for multiple os's
     strategy:
       matrix:
@@ -26,6 +28,6 @@ jobs:
           body_path: ${{ github.workflow }}-CHANGELOG.txt
           files: |
             ${{ matrix.asset }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          #GITHUB_REPOSITORY: softprops/action-gh-release-cross-test
+        #env:
+        #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #GITHUB_REPOSITORY: softprops/action-gh-release-cross-test
